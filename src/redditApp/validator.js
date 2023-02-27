@@ -6,7 +6,7 @@ export const ReditValidation = () => [
   check("title", "Title is required")
     .notEmpty()
     .bail()
-    .isLength({ min: 3, max: 50 })
+    .isLength({ min: 3 })
     .withMessage("This is too short")
     .bail()
     .custom(async (value, { req, location, path }) => {
@@ -28,7 +28,7 @@ export const subRedditValidation = () => [
     .notEmpty()
     .isLength({
       min: 3,
-      max: 50,
+     
     })
     .withMessage("This is too short")
     .custom(async (value) => {
